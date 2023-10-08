@@ -15,11 +15,20 @@ In summary, there are six benefits of Cloud Computing
 
 
 ## AWS Global Infrastructure
-In AWS, the physical infrastructure that makes up the AWS Global Infrastructure is in the form of Availability Zones and Regions.  
+In AWS, the physical infrastructure that makes up the AWS Global Infrastructure is in the form of Availability Zones and Regions. 
+
+![Region](./assets/figures/Getting_started/region.svg)
+
 __Regions__ are geographic locations worldwide where AWS hosts its data centers. When deciding which AWS Region to host your applications and workloads, you should consider four main aspects:  
 1. __Latency.__
 1. __Price.__
 1. __Service availability.__
 1. __Data compliance.__
 
-Inside every Region is a cluster of __Availability Zones__. An AZ consists of one or more data centers with redundant power, networking, and connectivity.
+Inside every Region is a cluster of __Availability Zones__. An AZ consists of one or more data centers with redundant power, networking, and connectivity.　　
+
+Depending on the AWS Service you use, your resources are either deployed at the AZ, Region, or Global level. Each service is different, when you operate a Region-scoped service, you only need to select the Region you want to use, and AWS automatically performs actions to increase data duability and availability. On the other hand, some services ask you to specify an AZ, and you are often responsible for increasing the data durability and high availability of these resources.  
+To keep your application available, you need to mantain high availability and resiliency. A well-known best practice for cloud architecture is to use Region-scoped, managed services which come with availablility and resiliency built in. When that is not possible, make sure the workload is replicated across multiple AZs.
+
+## Interacting with AWS
+Every action you make in AWS is an API call that is authenticated and authorized. In AWS, you can make API calls to services and resources through the AWS Management Console, the AWS Command Line Interface, or the Software Development Kits(SDKs).
